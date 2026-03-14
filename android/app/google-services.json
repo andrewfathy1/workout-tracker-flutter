@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "993186597969",
+    "project_id": "gympanion-632e5",
+    "storage_bucket": "gympanion-632e5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993186597969:android:490c9c1c36b26e84f5bc70",
+        "android_client_info": {
+          "package_name": "com.example.gympanion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoMjlDsqTwnsPt_H3kA98Vjpy4XCeIwVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
