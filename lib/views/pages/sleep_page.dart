@@ -80,6 +80,7 @@ class SleepPage extends StatelessWidget {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => ActivityBrowserPage(
+                                    title: 'Past 90 Nights',
                                     activityType: ActivityType.sleep,
                                   ),
                                 ));

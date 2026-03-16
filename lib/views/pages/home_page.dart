@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gympanion/views/data/constants.dart';
 import 'package:gympanion/views/data/sleep_manager.dart';
@@ -104,15 +105,10 @@ class HomePage extends StatelessWidget {
                         thickness: 2,
                       ),
                       Text('Total Sessions: ${userStats.previousWorkoutsCount}',
-                          style: AppTextStyles.titleLarge),
+                          style: AppTextStyles.titleMedium),
                       SizedBox(height: 10),
-                      Text(
-                        'This Week: ${userStats.thisWeekWorkouts.length} workouts',
-                        style: AppTextStyles.titleMedium,
-                      ),
-                      Divider(),
                       Text('Last Workout: ${userStats.lastWorkoutTitle}',
-                          style: AppTextStyles.titleLarge),
+                          style: AppTextStyles.titleMedium),
                       SizedBox(height: 8),
                       userStats.previousWorkoutsCount != 0
                           ? Align(
@@ -163,15 +159,10 @@ class HomePage extends StatelessWidget {
                         thickness: 2,
                       ),
                       Text('Total Sessions: ${userStats.previousCardiosCount}',
-                          style: AppTextStyles.titleLarge),
+                          style: AppTextStyles.titleMedium),
                       SizedBox(height: 10),
-                      Text(
-                        'This Week: ${userStats.thisWeekCardio.length} sessions',
-                        style: AppTextStyles.titleMedium,
-                      ),
-                      Divider(),
                       Text('Last Cardio: ${userStats.lastCardioTitle}',
-                          style: AppTextStyles.titleLarge),
+                          style: AppTextStyles.titleMedium),
                       SizedBox(height: 8),
                       userStats.previousCardiosCount != 0
                           ? Align(

@@ -30,6 +30,7 @@ class PRPage extends StatelessWidget {
                   child: ListView.separated(
                     itemCount: userStats.previousPRs.keys.length,
                     itemBuilder: (context, index) => CustomCardElement(
+                      enableShadow: false,
                       border: Border.all(
                           color: index % 2 == 1
                               ? AppColors.cardioColor

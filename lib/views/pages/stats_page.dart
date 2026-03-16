@@ -43,6 +43,7 @@ class StatsPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => ActivityBrowserPage(
+                        title: 'Last 90 Days',
                         activityType: ActivityType.workout,
                       ),
                     ));
@@ -71,6 +72,7 @@ class StatsPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => ActivityBrowserPage(
+                        title: 'Last 90 Days',
                         activityType: ActivityType.cardio,
                       ),
                     ));

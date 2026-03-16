@@ -6,15 +6,17 @@ import 'package:provider/provider.dart';
 enum ActivityType { workout, cardio, sleep }
 
 class ActivityBrowserPage extends StatelessWidget {
-  const ActivityBrowserPage({super.key, required this.activityType});
+  const ActivityBrowserPage(
+      {super.key, required this.activityType, required this.title});
 
   final ActivityType activityType;
+  final String title;
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> activityList;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Last 90 Days'),
+          title: Text(title),
         ),
         body: Consumer<UserStats>(
           builder: (context, userStats, child) {

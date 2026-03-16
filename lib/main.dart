@@ -62,12 +62,23 @@ class Gympanion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
       theme: context.select<AppData, bool>(
         (appData) => appData.isDarkMode,
       )
-          ? ThemeData.dark()
-          : ThemeData.light(),
+          ? ThemeData.dark().copyWith(
+              textTheme: ThemeData.dark().textTheme.apply(
+                    fontFamily: 'Poppins',
+                  ),
+            )
+          : ThemeData.light().copyWith(
+              textTheme: ThemeData.dark().textTheme.apply(
+                    fontFamily: 'Poppins',
+                  ),
+            ),
       // home: StartingPage(),
+
       home: AuthGate(),
     );
   }
