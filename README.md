@@ -20,32 +20,45 @@ It also lets you log your sleep and body measurements for further analytics and 
 ## Screenshots
 
 ### Home Screen
-<img src="screenshots/home1.png" width="300">
-<img src="screenshots/home2.png" width="300">
+<p align="center">
+  <img src="screenshots/home1.png" width="280">
+  <img src="screenshots/home2.png" width="280">
+</p>
 
 ### Stats Screen
-![Stats Screen](screenshots/stats1.png)
+<p align="center">
+  <img src="screenshots/stats1.png" width="250">
+</p>
 
 ### Start Screen
-![Start Screen](screenshots/start1.png)
-![Start Screen](screenshots/start2.png)
+<p align="center">
+  <img src="screenshots/start1.png" width="250">
+  <img src="screenshots/start2.png" width="250">
+</p>
 
-### Current Screen
-![Current Screen](screenshots/current1.png)
-![Current Screen](screenshots/add_set.png)
-![Current Screen](screenshots/edit_set.png)
+### Current Workout
+<p align="center">
+  <img src="screenshots/current1.png" width="250">
+  <img src="screenshots/add_set.png" width="250">
+  <img src="screenshots/edit_set.png" width="250">
+</p>
 
 ### Profile Screen
-![Profile Screen](screenshots/profile.png)
+<p align="center">
+  <img src="screenshots/profile.png" width="250">
+</p>
 
-### Personal Records Screen
-![PR Screen](screenshots/pr1.png)
-![PR Screen](screenshots/pr_details.png)
+### Personal Records
+<p align="center">
+  <img src="screenshots/pr1.png" width="250">
+  <img src="screenshots/pr_details.png" width="250">
+</p>
 
-### Sleep Screen
-![Sleep Screen](screenshots/sleep.png)
-![Sleep Screen](screenshots/add_sleep.png)
-
+### Sleep Tracking
+<p align="center">
+  <img src="screenshots/sleep.png" width="250">
+  <img src="screenshots/add_sleep.png" width="250">
+</p>
 
 ## Future Improvements
 - Workout program generator
