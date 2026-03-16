@@ -20,8 +20,8 @@ It also lets you log your sleep and body measurements for further analytics and 
 ## Screenshots
 
 ### Home Screen
-![Home Screen](screenshots/home1.png)
-![Home Screen](screenshots/home2.png)
+<img src="screenshots/home1.png" width="300">
+<img src="screenshots/home2.png" width="300">
 
 ### Stats Screen
 ![Stats Screen](screenshots/stats1.png)
