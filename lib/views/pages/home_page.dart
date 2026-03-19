@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gympanion/extensions/duration_extension.dart';
 import 'package:gympanion/views/data/constants.dart';
 import 'package:gympanion/views/data/sleep_manager.dart';
 import 'package:gympanion/views/data/user_stats.dart';
@@ -64,15 +65,16 @@ class HomePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '2',
+                                  userStats.thisWeekWorkouts.length.toString(),
                                   style: AppTextStyles.titleMedium,
                                 ),
                                 Text(
-                                  '2',
+                                  userStats.thisWeekCardio.length.toString(),
                                   style: AppTextStyles.titleMedium,
                                 ),
                                 Text(
-                                  '7h 34m',
+                                  userStats.averageSleepThisWeek
+                                      .toReadableDuration(),
                                   style: AppTextStyles.titleMedium,
                                 ),
                               ],
@@ -241,20 +243,17 @@ class HomePage extends StatelessWidget {
                                 Center(
                                   child: Text(
                                     'No records yet!',
-                                    style: AppTextStyles.titleLarge,
+                                    style: AppTextStyles.titleMedium,
                                   ),
                                 ),
                                 TextButton(
-                                  style: TextButton.styleFrom(
-                                    backgroundColor: Colors.grey,
-                                  ),
                                   onPressed: () {
                                     addSleepRecordForm(context);
                                   },
                                   child: Text(
                                     'Add',
                                     style: AppTextStyles.button
-                                        .copyWith(color: Colors.black),
+                                        .copyWith(color: Color(0xFF5E72EB)),
                                   ),
                                 ),
                               ],

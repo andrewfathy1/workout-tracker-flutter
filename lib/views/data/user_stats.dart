@@ -14,7 +14,10 @@ class UserStats with ChangeNotifier {
   List<Map<String, dynamic>> _thisWeekCardio = [];
 
   List<Map<String, dynamic>> _sleepRecords = [];
+  List<Map<String, dynamic>> _thisWeekSleepRecords = [];
+
   List<Map<String, dynamic>> get sleepRecords => _sleepRecords;
+  List<Map<String, dynamic>> get thisWeekSleepRecords => _thisWeekSleepRecords;
 
   final Map<String, List<ExercisePR>> _previousPRs = {};
 
@@ -22,6 +25,7 @@ class UserStats with ChangeNotifier {
   String _lastWorkoutTitle = '';
   int _previousCardioCount = 0;
   String _lastCardioTitle = '';
+  int _averageSleepThisWeek = 0;
 
   List<Map<String, dynamic>> get previousWorkouts => _previousWorkouts;
   List<Map<String, dynamic>> get thisWeekWorkouts => _thisWeekWorkouts;
@@ -36,6 +40,7 @@ class UserStats with ChangeNotifier {
 
   int get previousCardiosCount => _previousCardioCount;
   String get lastCardioTitle => _lastCardioTitle;
+  int get averageSleepThisWeek => _averageSleepThisWeek;
 
   StreamSubscription? _workoutSubscription;
   StreamSubscription? _cardioSubscription;
@@ -116,7 +121,8 @@ class UserStats with ChangeNotifier {
               (doc) => doc.data(),
             )
             .toList();
-
+        _thisWeekSleepRecords = filterThisWeeksActivities(_sleepRecords);
+        _averageSleepThisWeek = _getAverageSleepThisWeek();
         notifyListeners();
       },
     );
@@ -162,17 +168,35 @@ class UserStats with ChangeNotifier {
     final dateFormat = DateFormat('MMM dd, yyyy');
 
     return activities.where((activity) {
-      final dateStr = activity['dateFinished'] as String?;
-      if (dateStr == null) return false;
-
       try {
-        final activityDate = dateFormat.parse(dateStr);
+        final DateTime? activityDate;
+
+        if (activity['dateFinished'] is Timestamp) {
+          activityDate = (activity['dateFinished'] as Timestamp).toDate();
+        } else {
+          activityDate = dateFormat.parse(activity['dateFinished']);
+        }
 
         return !activityDate.isBefore(startOfWeek) &&
             !activityDate.isAfter(endOfWeek);
-      } catch (_) {
+      } catch (e) {
+        print('eeeeeeeeeee : $e');
         return false;
       }
     }).toList();
+  }
+
+  int _getAverageSleepThisWeek() {
+    _thisWeekSleepRecords = filterThisWeeksActivities(_sleepRecords);
+    print('_thisWeekSleepRecords $thisWeekSleepRecords');
+    if (_thisWeekSleepRecords.isEmpty) {
+      return 0;
+    }
+    int totalSleep = 0;
+    for (var sleepRecord in _thisWeekSleepRecords) {
+      totalSleep += sleepRecord['duration'] as int;
+    }
+    print('Total sleep secs:            $totalSleep');
+    return (totalSleep * 60 / _thisWeekSleepRecords.length).toInt();
   }
 }

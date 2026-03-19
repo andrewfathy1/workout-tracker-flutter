@@ -13,7 +13,7 @@ class SleepRecord {
 
   Map<String, dynamic> toJson() {
     return {
-      'date': date,
+      'dateFinished': date,
       'from': from!.hour * 60 + from!.minute,
       'to': to!.hour * 60 + to!.minute,
       'duration': duration.inMinutes,
@@ -22,7 +22,7 @@ class SleepRecord {
   }
 
   factory SleepRecord.fromJson(Map<String, dynamic> json) {
-    final date = json['date'];
+    final date = json['dateFinished'];
     final startHour = ((json['from'] / 60) as double).toInt();
     final startMins = json['from'] % 60;
     final endHour = ((json['to'] / 60) as double).toInt();
