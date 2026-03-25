@@ -52,8 +52,7 @@ class _AppNavigatorState extends State<AppNavigator> {
                   isMorning
                       ? 'Good Morning, ${snapshot.data?.displayName ?? ''}'
                       : isAfternoon
-                          // ? 'Good Afternoon, ${snapshot.data?.displayName ?? ''}'
-                          ? 'Good Afternoon, Andrew'
+                          ? 'Good Afternoon, ${snapshot.data?.displayName ?? ''}'
                           : 'Good Evening, ${snapshot.data?.displayName ?? ''}',
                   style: AppTextStyles.titleLarge,
                 );

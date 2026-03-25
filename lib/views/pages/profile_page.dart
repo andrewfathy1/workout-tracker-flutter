@@ -22,8 +22,7 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                'Andrew',
-                // FirebaseAuth.instance.currentUser?.displayName ?? 'Username',
+                FirebaseAuth.instance.currentUser?.displayName ?? 'Username',
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.white70,

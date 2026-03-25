@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gympanion/extensions/date_time_extension.dart';
 import 'package:gympanion/extensions/duration_extension.dart';
 import 'package:gympanion/views/data/constants.dart';
 import 'package:gympanion/views/data/sleep_manager.dart';
@@ -37,6 +37,7 @@ class HomePage extends StatelessWidget {
                           style: AppTextStyles.displayMedium,
                         ),
                       ),
+                      Text(DateTime.now().getCurrentWeekRange()),
                       Divider(),
                       Padding(
                         padding: const EdgeInsets.symmetric(

@@ -11,7 +11,7 @@ import 'package:gympanion/views/widgets/wide_button.dart';
 import 'package:provider/provider.dart';
 
 class SleepPage extends StatelessWidget {
-  SleepPage({super.key});
+  const SleepPage({super.key});
 
   @override
   Widget build(BuildContext context) {
