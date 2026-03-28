@@ -2,16 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gympanion/firebase_options.dart';
-import 'package:gympanion/services/firebase_auth_services.dart';
-import 'package:gympanion/views/data/app_data.dart';
-import 'package:gympanion/views/data/current_cardio_data.dart';
-import 'package:gympanion/views/data/current_workout_data.dart';
-import 'package:gympanion/views/data/prs/pr_manager.dart';
-import 'package:gympanion/views/data/sleep_manager.dart';
-import 'package:gympanion/views/data/user_data.dart';
-import 'package:gympanion/views/data/user_stats.dart';
-import 'package:gympanion/views/data/workouts_data.dart';
-import 'package:gympanion/views/widgets/auth_gate.dart';
+import 'package:gympanion/core/services/firebase_auth_services.dart';
+import 'package:gympanion/core/app/app_data.dart';
+import 'package:gympanion/features/cardio/providers/current_cardio_data.dart';
+import 'package:gympanion/features/workouts/providers/current_workout_data.dart';
+import 'package:gympanion/features/prs/providers/pr_manager.dart';
+import 'package:gympanion/features/sleep/providers/sleep_manager.dart';
+import 'package:gympanion/core/data/user_data.dart';
+import 'package:gympanion/features/stats/providers/user_stats.dart';
+import 'package:gympanion/features/workouts/models/workouts_data.dart';
+import 'package:gympanion/features/auth/auth_gate.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
