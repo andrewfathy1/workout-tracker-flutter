@@ -12,7 +12,7 @@ void showEditExerciseWidget(BuildContext ctx, Exercise exercise) {
   showModalBottomSheet(
     context: ctx,
     isScrollControlled: true,
-    backgroundColor: Colors.black87,
+    backgroundColor: Colors.grey[850],
     showDragHandle: true,
     builder: (context) {
       return Consumer2<CurrentWorkoutData, PRManager>(

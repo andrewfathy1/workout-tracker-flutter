@@ -22,7 +22,7 @@ class TimerWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 100,
+            width: 120,
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.black),

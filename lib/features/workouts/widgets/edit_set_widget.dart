@@ -19,12 +19,14 @@ void showEditSetWidget(
     context: ctx,
     builder: (context) {
       return AlertDialog(
+        backgroundColor: Colors.black87,
         title: Text(
           'Edit Set',
           textAlign: TextAlign.center,
         ),
         actionsAlignment: MainAxisAlignment.center,
         contentPadding: EdgeInsets.only(top: 16, right: 16, left: 16),
+        insetPadding: EdgeInsets.zero,
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -112,20 +114,25 @@ void showEditSetWidget(
                                   Text('Dropset #${e.key + 1}'),
                                   Row(
                                     children: [
-                                      CounterWidget(
-                                          title: 'Sub Reps',
-                                          editingValueKey: EditingValuesKeys
-                                                  .nonIndexedDropsetReps.key +
-                                              (e.key + 1).toString(),
-                                          editingValueType:
-                                              EditingValueType.reps),
-                                      CounterWidget(
-                                          title: 'Sub Weight',
-                                          editingValueKey: EditingValuesKeys
-                                                  .nonIndexedDropsetWeight.key +
-                                              (e.key + 1).toString(),
-                                          editingValueType:
-                                              EditingValueType.weight),
+                                      Expanded(
+                                        child: CounterWidget(
+                                            title: 'Sub Reps',
+                                            editingValueKey: EditingValuesKeys
+                                                    .nonIndexedDropsetReps.key +
+                                                (e.key + 1).toString(),
+                                            editingValueType:
+                                                EditingValueType.reps),
+                                      ),
+                                      Expanded(
+                                        child: CounterWidget(
+                                            title: 'Sub Weight',
+                                            editingValueKey: EditingValuesKeys
+                                                    .nonIndexedDropsetWeight
+                                                    .key +
+                                                (e.key + 1).toString(),
+                                            editingValueType:
+                                                EditingValueType.weight),
+                                      ),
                                     ],
                                   )
                                 ]),
